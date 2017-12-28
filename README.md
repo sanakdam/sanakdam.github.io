@@ -1,1 +1,0 @@
-# sanakdam.github.io

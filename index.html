@@ -1,78 +1,574 @@
-<!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
-<html>
-	<head>
-		<meta charset="utf-8">
-  		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html lang="en">
 
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.poptrox.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/init.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>San Sayidul Akdam Augusta</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,700|Roboto:300,400,700|Noto+Serif:400" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            font-family: Roboto, Arial, sans-serif;
+            font-weight: 300;
+            background-color: #f6f6f6;
+        }
+        
+        p {
+            display: inline;
+        }
+        
+        a,
+        span {
+            color: #4c92c1;
+            text-decoration: none;
+        }
+        
+        .email,
+        .site,
+        .github,
+        .phone-number,
+        .address {
+            margin-bottom: .4em;
+            font-size: 1em;
+        }
+        
+        ul {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        .card {
+            /*background-color: #fefefe;
+  box-shadow: 1px 1px 14px -5px rgba(0,0,0,0.5);
+  border-radius: 2px;*/
+            margin-bottom: 15px;
+        }
+        
+        .header.card {
+            margin-top: 15px;
+            margin-right: 15px;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 0 15px 0 20px;
+            border-bottom: 1px dashed #CFCFCF;
+        }
+        
+        section.card {
+            padding: 15px 15px 22.5px 20px;
+        }
+        
+        .header {
+            overflow: auto;
+            margin-left: 6px;
+            margin-right: 12px;
+        }
+        
+        .skill {
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 1em;
+            margin-bottom: .4em;
+            color: #4c92c1;
+            font-weight: 400;
+        }
+        
+        .skills p {
+            font-size: 1em;
+        }
+        
+        #name {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 3em;
+            font-weight: 400;
+            color: #555;
+            float: left;
+            margin: .1em .1em .2em;
+        }
+        
+        #resume-container {
+            width: 900px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            margin-top: 0;
+            margin-bottom: .4em;
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-size: 1.2em;
+        }
+        
+        .left-content {
+            float: left;
+            width: 32%;
+            margin-left: 6px;
+        }
+        
+        .left-content .section-header {
+            font-weight: 400;
+            color: #BC1B39;
+            text-transform: uppercase;
+        }
+        
+        .left-content .section-content {
+            font-weight: 300;
+        }
+        
+        .left-content .title {
+            font-weight: 400;
+            margin-bottom: .5em;
+            color: #4c92c1;
+        }
+        
+        .left-content .card {
+            border-bottom: 1px dashed #CFCFCF;
+        }
+        
+        .right-content {
+            width: 64%;
+            margin-right: 15px;
+            float: right;
+        }
+        
+        .right-content .section-header {
+            /*color: #000;*/
+            color: #BC1B39;
+            text-transform: uppercase;
+        }
+        
+        .right-content {
+            border-left: 1px dashed #CFCFCF;
+        }
+        
+        .section-content {
+            overflow: auto;
+        }
+        
+        .title {
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 1em;
+            font-weight: 300;
+            margin-bottom: .2em;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        
+        .duration {
+            font-family: Roboto, Arial, sans-serif;
+            font-weight: 300;
+            color: #3c82b1;
+            margin-top: .2em;
+            margin-bottom: .3em;
+            text-align: right;
+        }
+        
+        .occupation {
+            font-size: 1em;
+            font-family: Roboto, Arial, sans-serif;
+            font-weight: 400;
+            margin-bottom: .5em;
+        }
+        
+        .languages {
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 1em;
+            font-weight: 300;
+        }
+        
+        .list {
+            list-style-type: none;
+            font-size: 1em;
+        }
+        
+        .location {
+            font-size: 1em;
+            font-weight: 300;
+            margin-bottom: .1em;
+        }
+        
+        .left {
+            float: left;
+            width: 45%;
+            clear: both;
+        }
+        
+        .right {
+            float: right;
+            width: 55%;
+        }
+        
+        ul.list {
+            list-style-type: circle;
+            padding-left: 1.1rem;
+        }
+        
+        ul.list li {
+            line-height: 135%;
+            margin-bottom: .2em;
+        }
+        
+        ul.list li:before {
+            display: inline-block;
+            width: 0;
+            margin-left: 0;
+        }
+        
+        .project,
+        .employment,
+        .education,
+        .skills {
+            margin-bottom: .8em;
+        }
+        
+        .education-info .title {
+            margin-bottom: .2em;
+            line-height: 130%;
+        }
+        
+        .education.last {
+            margin-bottom: .8em !important;
+        }
+        
+        .education .grade {
+            font-size: 1em;
+        }
+        
+        .project-info {
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        
+        .last {
+            margin-bottom: 0!important;
+        }
+        
+        .term {
+            font-size: 1.75em;
+            font-weight: 200;
+            color: #000;
+        }
+        
+        #skills-container,
+        .contact {
+            margin-bottom: 0;
+        }
+        
+        .interests,
+        .subtitle {
+            font-size: 1em;
+            margin-bottom: .2em;
+        }
+        
+        .project .title,
+        .employment .title {
+            color: #4c92c1;
+            font-weight: 400;
+        }
+        
+        .employment .summary {
+            font-size: 1em;
+            margin-bottom: .4em;
+        }
+        
+        #awards .summary {
+            font-size: 1em;
+        }
+        
+        #summary {
+            font-size: 1em;
+        }
+        
+        .contact .site {
+            font-size: .9em;
+        }
+    </style>
+</head>
 
-		<title>sanakdam</title>
-  		<meta name="description" content="Peserta Besut Kode Universitas">
+<body>
+    <div id='resume-container'>
+        <div class='header card'>
+            <h1 id='name'>
+                San Sayidul Akdam Augusta
+            </h1>
+        </div>
+        <div class='left-content'>
+            <section class='card'>
+                <div class='section-header'>Contact</div>
+                <div class='section-content' id='contact'>
+                    <div class='contact'>
+                        <div class='address'>
+                            Jl. Samsul Arifin / II No. 42 Sampang, Jawa Timur, Indonesia
+                        </div>
+                        <div class='email'>
+                            <a href='mailto:san.akdam@gmail.com'>san.akdam@gmail.com</a>
+                        </div>
 
-  		<meta name="viewport" content="width=device-width,initial-scale=1">
+                        <div class="site">
+                            Linkedin: <a href="https://www.linkedin.com/in/sanakdam/">sanakdam</a>
+                        </div>
 
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-	</head>
-	<body id="top">
+                        <div class="site">
+                            Github: <a href="https://github.com/sanAkdam">sanakdam</a>
+                        </div>
 
-		<!-- Header -->
-			<header id="header">
-				<a href="https://github.com/sanAkdam" class="image avatar"><img src="images/avatar.png" alt="" /></a>
-				<h1><strong>I am San</strong>, a student <br /> at the Brawijaya University<br />
-				<i>I am a web developer and designer. There are currently migrating from PHP to Go</i></h1>
-			</header>
+                        <div class='phone-number last'>
+                            <a href="tel:082233942958">082233942958</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-		<!-- Main -->
-			<div id="main">
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<a href="newbie-first-post.html"><h2>Newbie First Post</h2></a>
-							<p>Published on October 28, 2016</p>
-						</header>
-						<h3>
-							Hello, this is my first blog post on Github Pages. Previously I've never written in a blog post and do not know Github provides features like this. but since I participated in the Besut Kode Universitas I broke the record for the first time do Pull Requests and use this Github Page.
-						</h3>
-					</section>
-				<!-- Two -->
-					<section id="two">
-						<header class="major">
-							<a href="dont-git-init-your-repo.html"><h2>Never git init your repo</h2></a>
-							<p>Published on November 9, 2016</p>
-						</header>
-						<h3>
-							The first commit of a repository can not be rebased like regular commits, so it’s good practice to create an empty commit as your repository root. So you should run <code>git commit -m “root” --allow-empty'</code> right after init your repository. This creates an empty root commit in one quick step. But that's hard to remember, right? Run this in your terminal<br />
-							<code>
-								$ git config --global alias.it '!git init && git commit -m “root” --allow-empty'
-							</code><br />
-							And next time you init a new repo, <strong>don't git init!</strong>, <strong>git it!!!</strong>
-						</h3>
-					</section>
-			</div>
+            <section class='card'>
+                <div class='section-header'>Technical Skills</div>
+                <div class='section-content' id='technical-skills'>
+                    <div id='skills-container'>
+                        <div class='skills'>
+                            <div class='skill'><strong>Master</strong></div>
+                            <p>
+                                HTML5, CSS3, Javascript, PHP, Laravel, C++, MySql
+                            </p>
+                        </div>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="https://github.com/sanAkdam" class="icon fa-github"><span class="label">Github</span></a></li>
-					<li><a href="https://www.facebook.com/akdamerror?ref=bookmarks" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="https://www.linkedin.com/in/san-sayidul-akdam-augusta-810933108?trk=nav_responsive_tab_profile_pic" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a href="mailto:san.akdam@gmail.com?subject=The%20subject%20of%20the%20mail" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="more">
-					<li><a href="https://www.hackerrank.com/san_akdam">HackerRank</a></li><li><a href="http://stackoverflow.com/users/7040935/san-sayidul-akdam-augusta">StackOverFlow</a></li>
-				</ul>
-			</footer>
-	</body>
+                        <div class='skills'>
+                            <div class='skill'><strong>Advanced</strong></div>
+                            <p>
+                                Ruby, NodeJS, OpenCV, Matlab, Rails, ExpressJS, Git
+                            </p>
+                        </div>
+
+                        <div class='skills'>
+                            <div class='skill'><strong>Intermediate</strong></div>
+                            <p>
+                                Java, Python, Go, Echo, C#, ReactJS, PosgreSql, MongoDB, System Administration
+                            </p>
+                        </div>
+
+                        <div class='skills'>
+                            <div class='skill'><strong>Beginner</strong></div>
+                            <p>
+                                Deep Learning
+                            </p>
+                        </div>
+
+                        <div class='skills'>
+                            <div class='skill'><strong>Personal</strong></div>
+
+                            <p>
+                                Teamwork, Trainer, Time Management, Creativity
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class='card'>
+                <div class='section-header'>Education</div>
+                <div class='section-content' id='education'>
+                    <div class='education last'>
+                        <div class='education-info'>
+                            <div class='title'>
+                                Undergraduate Computer Science
+                                <br>at Brawijaya University
+                            </div>
+                            <div class='duration'>
+                                2014 - Present
+                            </div>
+                            <p><strong>Grade : </strong>Currently 3.396</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class='card'>
+                <div class='section-header'>Languages</div>
+                <div class='section-content' id='technical-skills'>
+                    <div id='skills-container'>
+                        <div class='skills'>
+                            <div class='skill'><strong>Indonesian</strong></div>
+                            (Native Speaker)
+                        </div>
+                        <div class='skills'>
+                            <div class='skill'><strong>English</strong></div>
+                            (Almost Fluent)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class='card'>
+                <div class='section-header'>Interests</div>
+                <div class='section-content' id='technical-skills'>
+                    <div id='skills-container'>
+                        <div class='skills'>
+                            <p>
+                                Data Science, TensorFlow, FastText, Backend, Frontend, Neural Network, Computer Vision
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class='right-content'>
+            <section class='card'>
+                <div class='section-header'>Summary</div>
+                <div class='section-content' id='summary'>
+                    Hello world my name san, I am a programmer who previously a designer. I loved programming since 2014 especially with latest technology. I loved both of Backend and Frontend Development. Now I am one of a programmer of robotics research lab at Brawijaya
+                    University, which is preparing in the event KRI (Kontes Robot Indonesia). Recently, I'm interested in Machine Learning or Artificial Intelligence, I thought both of them is very cool and will be the future of technology.
+                </div>
+            </section>
+            <section class='card'>
+                <div class='section-header'>Work Experience</div>
+                <div class='section-content' id='employment'>
+                    <div class='employment'>
+                        <div class='employment-info'>
+                            <div class='title'>
+                                <a href=''>
+                                    <strong>Backend Developer </strong>at Gumcode
+                                </a>
+                            </div>
+                            <a class='content' href='https://gumcode.net/'>https://gumcode.net/</a>
+                            <div class='duration'>
+                                <p>Feb 2017 - Present</p>
+                            </div>
+                        </div>
+                        <div class='info'>
+                            <ul class="list">
+                                <li>
+                                    Develop several backend web apps & 3rd party API integration
+                                </li>
+                                <li>
+                                    Collaboration with other developer using Git
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class='employment'>
+                        <div class='employment-info'>
+                            <div class='title'>
+                                <a href=''>
+                                    <strong>Practicum Assistant </strong>at Software Engineering Research Lab, FILKOM Brawijaya University
+                                </a>
+                            </div>
+                            <div class='duration'>
+                                <p>Mar 2017 - Juni 2017</p>
+                            </div>
+                        </div>
+                        <div class='info'>
+
+                            <ul class="list">
+                                <li>
+                                    Web programming assistant
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class='card'>
+                <div class='section-header'>Volunteer</div>
+                <div class='section-content' id='projects'>
+                    <div class='project last'>
+                        <div class='project-info'>
+                            <div class='title'>
+                                <a href=''>
+                                    <strong>Programmer </strong>at Robotics Research Lab, FILKOM Brawijaya University
+                                </a>
+                            </div>
+                        </div>
+                        <div class='duration'>
+                            <p>2015 - Present</p>
+                        </div>
+                        <div class='info'>
+                            <ul class="list">
+                                <li>Developed soccer robot framework</li>
+                                <li>Computer vision research in robot soccer</li>
+                                <li>Fixed bug in C++</li>
+                                <li>Robot Soccer Trainer</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class='project last'>
+                        <div class='project-info'>
+                            <div class='title'>
+                                <a href=''>
+                                    <strong>Engineer </strong>at Talangin
+                                </a>
+                            </div>
+                            <a class='content' href='http://talangin.com/'>http://talangin.com/</a>
+                        </div>
+                        <div class='duration'>
+                            <p>2017- Present</p>
+                        </div>
+                        <div class='info'>
+                            <ul class="list">
+                                <li>Develop frontend web based with ReactJs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class='project last'>
+                        <div class='project-info'>
+                            <div class='title'>
+                                <a href=''>
+                                    <strong>Fundrising & External Relation </strong>at Rumah Jamoer
+                                </a>
+                            </div>
+                            <a class='content' href='http://rumahjamoer.net/'>http://rumahjamoer.net/</a>
+                        </div>
+                        <div class='duration'>
+                            <p>2016 - Present</p>
+                        </div>
+                        <div class='info'>
+                            <ul class="list">
+                                <li>Develop web apps to introduce rumah jamoer </li>
+                                <li>Design several poster for open recruitment and several events</li>
+                                <li>Maintaining web apps at production server</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class='card'>
+                <div class='section-header'>Awards</div>
+                <div class='section-content' id='employment'>
+                    <div class='employment'>
+                        <div class='employment-info'>
+                            <div class='title'>
+                                <a href=''>
+                                    <strong>Fourth Winner </strong>of KRI (Kontes Robot Indonesia)
+                                </a>
+                            </div>
+                            <a class='content' href='http://kri2017.ub.ac.id/'>http://kri2017.ub.ac.id/</a>
+                            <div class='duration'>
+                                <p>06 May 2017</p>
+                            </div>
+                        </div>
+                        <div class='info'>
+                            <ul class="list">
+                                <li>
+                                    Region 4 at Brawijaya University
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</body>
+
 </html>
