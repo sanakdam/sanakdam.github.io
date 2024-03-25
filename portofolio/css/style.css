@@ -830,7 +830,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.2rem; }
 
 .testimonial {
-  padding: 30px;
+  padding: 16px;
   color: #000;
   -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
